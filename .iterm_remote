@@ -650,7 +650,9 @@ fi
 
 PS1="[\$CUSTOMER]|\d|\[\e[38;5;51;1m\]\t\[\e[0m\]|\h\[\e[38;5;208;1m\]\$\[\e[0m\]"
 
-if [ -z "$CUSTOMER" ]; then
-  # Prompt the user to set the MY_VARIABLE variable
-  typeset -p "CUSTOMER="
-fi
+CUSTOMER='UNSET'
+cust() {
+    #do things with parameters like $1 such as
+    CUSTOMER="$1"
+}
+
